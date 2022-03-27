@@ -508,11 +508,13 @@ MonoBehaviour:
   speed: 5
   jumpForce: 6.5
   rb: {fileID: 314045580}
+  isGrounded: 0
   groundCheck: {fileID: 134639824}
   checkRadius: 0.4
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  availavbleJumps: 0
   jumpCount: 1
 --- !u!114 &314045586
 MonoBehaviour:
@@ -1338,6 +1340,14 @@ PrefabInstance:
     - target: {fileID: 8004713260481455666, guid: 7d08e64ae1577ed49a4f271b9c40a574, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004713260481455678, guid: 7d08e64ae1577ed49a4f271b9c40a574, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9042783
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004713260481455678, guid: 7d08e64ae1577ed49a4f271b9c40a574, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.87917125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d08e64ae1577ed49a4f271b9c40a574, type: 3}

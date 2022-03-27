@@ -10,12 +10,12 @@ public class CharacterMove : MonoBehaviour
 
     private float moveInput;
 
-    private bool isGrounded;
+    [HideInInspector] public bool isGrounded;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
 
-    private int availavbleJumps;
+    [HideInInspector] public int availavbleJumps;
     public int jumpCount;
 
     private void Start()
@@ -23,7 +23,7 @@ public class CharacterMove : MonoBehaviour
         availavbleJumps = jumpCount - 1;
     }
 
-    private void Update()
+    public void jump(float jumpForce)
     {
         if (isGrounded)
         {
@@ -34,10 +34,16 @@ public class CharacterMove : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpForce;
             availavbleJumps--;
-        } else if (Input.GetKeyDown(KeyCode.Space) && availavbleJumps == 0 && isGrounded)
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && availavbleJumps == 0 && isGrounded)
         {
             rb.velocity = Vector2.up * jumpForce;
         }
+    }
+
+    private void Update()
+    {
+        jump(jumpForce);
     }
     
     private void FixedUpdate()

@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class JumpPlatform : MonoBehaviour
 {
-    private bool Joined = true;
 
     public void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Player" && Joined)
+        if (coll.tag == "Player")
         {
-            coll.gameObject.GetComponent<CharacterMove>().jumpForce *= 1.5f;
-            Joined = false;
+            coll.gameObject.GetComponent<CharacterMove>().jumpForce *= 2f;
+
         }
-        else
+    }
+
+    public void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.tag == "Player")
         {
-            coll.gameObject.GetComponent<CharacterMove>().jumpForce /= 1.5f;
-            Joined = true;
+            coll.gameObject.GetComponent<CharacterMove>().jumpForce /= 2f;
+
         }
     }
 }
