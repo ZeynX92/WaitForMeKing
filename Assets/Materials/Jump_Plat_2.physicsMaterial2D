@@ -8,4 +8,4 @@ PhysicsMaterial2D:
   m_PrefabAsset: {fileID: 0}
   m_Name: Jump_Plat_2
   friction: 0.4
-  bounciness: 5
+  bounciness: 0
