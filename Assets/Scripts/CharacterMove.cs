@@ -23,7 +23,7 @@ public class CharacterMove : MonoBehaviour
         availavbleJumps = jumpCount - 1;
     }
 
-    public void jump(float jumpForce)
+    public void Jump(float jumpForce)
     {
         if (isGrounded)
         {
@@ -43,15 +43,14 @@ public class CharacterMove : MonoBehaviour
 
     private void Update()
     {
-        jump(jumpForce);
+        Jump(jumpForce);
     }
     
     private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-
         moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+      
     }
 }
-

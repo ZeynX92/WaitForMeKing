@@ -9,7 +9,7 @@ public class JumpPlatform : MonoBehaviour
     {
         if (coll.tag == "Player")
         {
-            coll.gameObject.GetComponent<CharacterMove>().jumpForce *= 2f;
+            coll.gameObject.GetComponent<CharacterMove>().jumpForce *= 1.5f;
 
         }
     }
@@ -18,7 +18,7 @@ public class JumpPlatform : MonoBehaviour
     {
         if (coll.tag == "Player")
         {
-            coll.gameObject.GetComponent<CharacterMove>().jumpForce /= 2f;
+            coll.gameObject.GetComponent<CharacterMove>().jumpForce /= 1.5f;
 
         }
     }
