@@ -18,7 +18,7 @@ public class CharacterStats : MonoBehaviour
 
     public void Start()
     {
-        gearText.text = $"Gears: {gearsCount}";
+        gearText.text = $"{gearsCount}";
     }
 
     public void TakeDamage()
@@ -30,7 +30,7 @@ public class CharacterStats : MonoBehaviour
     public void AddGear(int value)
     {
         gearsCount += value;
-        gearText.text = $"Gears: {gearsCount}";
+        gearText.text = $"{gearsCount}";
     }
 
     void Update()
