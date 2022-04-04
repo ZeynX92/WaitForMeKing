@@ -5,30 +5,34 @@ using UnityEngine;
 
 public class BreakPlatform : MonoBehaviour
 {
-    public GameObject platform; // публичная переменная платформы
-    bool canbreak; // может ли сломаться
+    public float BreakTime = 3f;
+    public float HealTime = 5f;
+
+    private bool CanBreak;
+
     void Start()
     {
-        canbreak = true;
+        CanBreak = true;
     }
-    void OnTriggerEnter2D(Collider2D col) // если коснулся колаедра (только игрок)
+
+    void OnTriggerEnter2D(Collider2D coll)
     {
-        Debug.Log(col.tag);
-        if (col.tag == "Player" & canbreak)
+        if (coll.tag == "Player" & CanBreak)
         {
-            Debug.Log("eeee");
-            canbreak = false;
-            Invoke("Break", 3f);
+            CanBreak = false;
+            Invoke("Break", BreakTime);
         }
     }
+
     void Break()
     {
-        platform.SetActive(false);
-        Invoke("Regen", 5f);
+        gameObject.SetActive(false);
+        Invoke("Heal", HealTime);
     }
-    void Regen()
+
+    void Heal()
     {
-        platform.SetActive(true);
-        canbreak = true;
+        gameObject.SetActive(true);
+        CanBreak = true;
     }
 }
