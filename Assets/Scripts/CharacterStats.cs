@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CharacterStats : MonoBehaviour
 {
+    public Vector3 CheckPoint;
+    public Vector3 GlobalCheckPoint;
+
     public int gearsCount;
     public Text gearText;
 
@@ -18,13 +21,16 @@ public class CharacterStats : MonoBehaviour
 
     public void Start()
     {
+        CheckPoint = new Vector3(-6.235f, -1.919f, 0.0f);
+        GlobalCheckPoint = new Vector3(-6.235f, -1.919f, 0.0f);
         gearText.text = $"{gearsCount}";
     }
 
     public void TakeDamage()
     {
-        HP -= 1; // TODO: Сделать отталкивание при получении урона
+        HP -= 1;
         new WaitForSeconds(1);
+        transform.position = CheckPoint;
     }
 
     public void AddGear(int value)
@@ -37,7 +43,7 @@ public class CharacterStats : MonoBehaviour
     {
         if (HP <= 0)
         {
-            transform.position = new Vector3(-6.235f, -1.919f, 0.0f);
+            transform.position = GlobalCheckPoint;
             HP = healthCount;
         }
 

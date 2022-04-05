@@ -7,6 +7,9 @@ TagManager:
   - Platform
   - JumpPlatform
   - Gear
+  - BreakPlatform
+  - Spike
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - UI
   - Ground
   - 
-  - 
-  - 
-  - 
+  - Bonuses|Spike
+  - CheckPoints
+  - Background
   - 
   - 
   - 
@@ -43,6 +46,12 @@ TagManager:
   m_SortingLayers:
   - name: Ground
     uniqueID: 3965336055
+    locked: 0
+  - name: CheckPoints
+    uniqueID: 2716820837
+    locked: 0
+  - name: Bonuses | Spikes
+    uniqueID: 3643992739
     locked: 0
   - name: Default
     uniqueID: 0
