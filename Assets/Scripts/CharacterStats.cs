@@ -8,13 +8,17 @@ public class CharacterStats : MonoBehaviour
     public Vector3 CheckPoint;
     public Vector3 GlobalCheckPoint;
 
-    public int gearsCount;
+    public int gearsCount; // TODO: общее кол-во шестерней static -- везде
     public Text gearText;
+    public Text CartridgeText;
+
+    public int cartridgeCount = 3;
 
     public int HP;
     public int healthCount;
 
     public Image[] lives;
+    public GameObject[] CheckPoints;
 
     public Sprite fullLive;
     public Sprite emptyLive;
@@ -24,6 +28,7 @@ public class CharacterStats : MonoBehaviour
         CheckPoint = new Vector3(-6.235f, -1.919f, 0.0f);
         GlobalCheckPoint = new Vector3(-6.235f, -1.919f, 0.0f);
         gearText.text = $"{gearsCount}";
+        CartridgeText.text = $"Cartridges: {cartridgeCount}";
     }
 
     public void TakeDamage()
@@ -39,11 +44,20 @@ public class CharacterStats : MonoBehaviour
         gearText.text = $"{gearsCount}";
     }
 
+    public void AddCartridge(int value)
+    {
+        cartridgeCount += 1;
+        CartridgeText.text = $"Cartridges: {cartridgeCount}";
+    }
+
     void Update()
     {
+        CartridgeText.text = $"Cartridges: {cartridgeCount}";
+
         if (HP <= 0)
         {
             transform.position = GlobalCheckPoint;
+            DisableCheckPoints();
             HP = healthCount;
         }
 
@@ -71,6 +85,16 @@ public class CharacterStats : MonoBehaviour
             {
                 lives[i].enabled = false;
             }
+        }
+    }
+
+    public void DisableCheckPoints()
+    {
+        CheckPoint = GlobalCheckPoint;
+        for (int i = 0; i < CheckPoints.Length; i++)
+        {
+            CheckPoints[i].GetComponent<Animator>().SetBool("Used", false);
+            CheckPoints[i].GetComponent<LocalCheckPoint>().Used = false;
         }
     }
 }
