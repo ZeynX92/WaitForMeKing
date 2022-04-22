@@ -25,8 +25,7 @@ public class CharacterStats : MonoBehaviour
 
     public void Start()
     {
-        CheckPoint = new Vector3(-6.235f, -1.919f, 0.0f);
-        GlobalCheckPoint = new Vector3(-6.235f, -1.919f, 0.0f);
+        CheckPoint = GlobalCheckPoint;
         gearText.text = $"{gearsCount}";
         CartridgeText.text = $"Cartridges: {cartridgeCount}";
     }
