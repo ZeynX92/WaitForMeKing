@@ -23,7 +23,7 @@ public class Battery : MonoBehaviour
 
     void BatteryDisable()
     {
-        buffer.gameObject.GetComponent<CharacterMove>().jumpCount -= 1;
+        buffer.gameObject.GetComponent<CharacterMove>().jumpCount = 1;
         gameObject.SetActive(true);
     }
 }
