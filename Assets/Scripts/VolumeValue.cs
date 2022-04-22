@@ -12,7 +12,5 @@ public class VolumeValue : MonoBehaviour
     void Update()
     {
         audioSrc.volume = slider.value / 100;
-        Debug.Log(audioSrc.volume);
-        Debug.Log(slider.value / 100);
     }
 }
