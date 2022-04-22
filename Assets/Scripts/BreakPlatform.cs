@@ -9,9 +9,11 @@ public class BreakPlatform : MonoBehaviour
     public float HealTime = 5f;
 
     private bool CanBreak;
+    private Animator anim;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         CanBreak = true;
     }
 
@@ -20,6 +22,7 @@ public class BreakPlatform : MonoBehaviour
         if (coll.tag == "Player" & CanBreak)
         {
             CanBreak = false;
+            anim.SetBool("Activate", true);
             Invoke("Break", BreakTime);
         }
     }
@@ -33,6 +36,7 @@ public class BreakPlatform : MonoBehaviour
     void Heal()
     {
         gameObject.SetActive(true);
+        anim.SetBool("Activate", false);
         CanBreak = true;
     }
 }

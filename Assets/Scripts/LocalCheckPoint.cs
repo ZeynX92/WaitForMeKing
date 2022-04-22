@@ -6,6 +6,7 @@ public class LocalCheckPoint : MonoBehaviour
 {
     public bool Used = false;
     private Animator anim;
+    // TODO: ¬озвращать патроны к исходному состо€нию
 
     void Start()
     {
