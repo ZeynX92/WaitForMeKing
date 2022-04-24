@@ -1451,6 +1451,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2134458114}
     - target: {fileID: 1560515512610787572, guid: be8aa58110be5704a8404f3769e03b2c, type: 3}
+      propertyPath: GlobalCheckPoint.x
+      value: -5.306615
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560515512610787572, guid: be8aa58110be5704a8404f3769e03b2c, type: 3}
+      propertyPath: GlobalCheckPoint.y
+      value: -1.984874
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560515512610787572, guid: be8aa58110be5704a8404f3769e03b2c, type: 3}
       propertyPath: lives.Array.data[0]
       value: 
       objectReference: {fileID: 1618006510}

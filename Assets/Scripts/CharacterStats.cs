@@ -10,9 +10,6 @@ public class CharacterStats : MonoBehaviour
 
     public int gearsCount; // TODO: общее кол-во шестерней static -- везде
     public Text gearText;
-    public Text CartridgeText;
-
-    public int cartridgeCount = 3;
 
     public int HP;
     public int healthCount;
@@ -27,7 +24,6 @@ public class CharacterStats : MonoBehaviour
     {
         CheckPoint = GlobalCheckPoint;
         gearText.text = $"{gearsCount}";
-        CartridgeText.text = $"Cartridges: {cartridgeCount}";
     }
 
     public void TakeDamage()
@@ -43,16 +39,8 @@ public class CharacterStats : MonoBehaviour
         gearText.text = $"{gearsCount}";
     }
 
-    public void AddCartridge(int value)
-    {
-        cartridgeCount += 1;
-        CartridgeText.text = $"Cartridges: {cartridgeCount}";
-    }
-
     void Update()
     {
-        CartridgeText.text = $"Cartridges: {cartridgeCount}";
-
         if (HP <= 0)
         {
             transform.position = GlobalCheckPoint;

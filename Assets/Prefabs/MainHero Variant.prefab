@@ -130,7 +130,7 @@ MonoBehaviour:
   offset: 0
   Impulse: 12
   shotDir: {fileID: 465762933}
-  startTime: 1
+  startTime: 3
 --- !u!114 &1904563832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1560515512610787565, guid: be8aa58110be5704a8404f3769e03b2c, type: 3}
       propertyPath: m_Name
-      value: MainHero
+      value: MainHero Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1560515512610787572, guid: be8aa58110be5704a8404f3769e03b2c, type: 3}
       propertyPath: gearText

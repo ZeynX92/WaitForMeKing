@@ -22,17 +22,13 @@ public class Musket : MonoBehaviour
         difference.z = 0;
 
 
-        if (timeShot <= 0 && transform.parent.gameObject.GetComponent<CharacterStats>().cartridgeCount > 0)
+        if (timeShot <= 0)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 transform.parent.gameObject.GetComponent<CharacterMove>().GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 transform.parent.gameObject.GetComponent<CharacterMove>().GetComponent<Rigidbody2D>().AddForce(-1 * difference.normalized * Impulse, ForceMode2D.Impulse);
                 timeShot = startTime;
-
-                Debug.Log(difference.normalized);
-
-                transform.parent.gameObject.GetComponent<CharacterStats>().cartridgeCount -= 1;
             }
         }
         else

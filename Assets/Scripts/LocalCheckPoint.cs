@@ -20,6 +20,7 @@ public class LocalCheckPoint : MonoBehaviour
             if (!Used)
             {
                 anim.SetBool("Used", true);
+                coll.gameObject.GetComponent<CharacterStats>().HP += 1;
                 coll.gameObject.GetComponent<CharacterStats>().CheckPoint = this.transform.position;
                 Used = true;
                 GameObject[] CheckPoints = coll.gameObject.GetComponent<CharacterStats>().CheckPoints;
