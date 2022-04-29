@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9cb4f63e3388d45b57a015190ceef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Musket: {fileID: 0}
   speed: 5
   rb: {fileID: 1560515512610787562}
   DashEnabled: 1
@@ -157,7 +158,7 @@ MonoBehaviour:
   DashCoolDown: 1.5
   DashTime: 0.25
   DashCount: 1
-  jumpForce: 6.5
+  jumpForce: 8.5
   isGrounded: 0
   groundCheck: {fileID: 1560515512165110966}
   checkRadius: 0.1
@@ -189,6 +190,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  CheckPoints: []
   fullLive: {fileID: 21300000, guid: 96adf259ea5494048b4099d3bbfa2610, type: 3}
   emptyLive: {fileID: 21300000, guid: 69aa771bc9a60994eb8554cdfe9c3e1c, type: 3}
 --- !u!70 &1560515512610787561
