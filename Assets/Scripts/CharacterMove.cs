@@ -84,11 +84,13 @@ public class CharacterMove : MonoBehaviour
         {
             Flip();
             Musket.GetComponent<MusketRotation>().LocalScale.x = -1f;
+           
 
         } else if (!FacingRight && Input.GetKeyDown("d"))
         {
             Flip();
             Musket.GetComponent<MusketRotation>().LocalScale.x = +1f;
+           
         }
 
         pos = main.ScreenToWorldPoint(transform.position);
